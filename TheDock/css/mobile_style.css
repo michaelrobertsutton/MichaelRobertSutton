@@ -1,0 +1,30 @@
+html, body{
+	text-align: center;
+	background-image:url('../images/canvas.jpg');
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y:auto;
+	margin: 0;
+	padding: 0;
+}
+
+#body_text {
+	color: #ffffff;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2.5em;
+	line-height: 100% ;
+	margin: 0 auto;
+
+	padding-top: 25px;
+	padding-bottom: 15px;
+
+	width: 100%;
+	vertical-align: middle;
+	display: block;
+}
+#footer_social{
+	padding-bottom: 25px;
+}
+.social_icon{
+	margin-right: 15px;
+}
