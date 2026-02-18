@@ -407,11 +407,6 @@ h4 {
   background: rgba(255, 255, 255, 0.4);
 }
 
-.business-cta {
-  font-weight: 600;
-  max-width: 62ch;
-}
-
 .lead-bar {
   display: grid;
   gap: var(--space-4);
