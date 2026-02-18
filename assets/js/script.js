@@ -75,6 +75,7 @@
         return document.getElementById(id);
       })
       .filter(Boolean);
+    var lastSection = sections.length ? sections[sections.length - 1] : null;
 
     var setActive = function (id) {
       navLinks.forEach(function (link) {
@@ -107,6 +108,20 @@
       sections.forEach(function (section) {
         observer.observe(section);
       });
+    }
+
+    // When scrolled to page bottom, ensure the final nav section is active.
+    if (lastSection) {
+      var setLastSectionAtPageEnd = function () {
+        var scrollBottom = window.pageYOffset + window.innerHeight;
+        var documentBottom = document.documentElement.scrollHeight;
+        if (documentBottom - scrollBottom <= 2) {
+          setActive(lastSection.id);
+        }
+      };
+
+      window.addEventListener("scroll", setLastSectionAtPageEnd, { passive: true });
+      setLastSectionAtPageEnd();
     }
   }
 
