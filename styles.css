@@ -398,6 +398,28 @@ h4 {
   padding-left: 1.1rem;
 }
 
+.artifact-snippet {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: 0.45rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.artifact-snippet-label {
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-2);
+}
+
+.artifact-snippet pre {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
 .focus-callout {
   display: grid;
   gap: var(--space-3);
@@ -410,6 +432,20 @@ h4 {
 .lead-bar {
   display: grid;
   gap: var(--space-4);
+}
+
+.speaking-topics {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.speaking-topic {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.speaking-topic h4 {
+  margin: 0;
 }
 
 .lead-chips {
