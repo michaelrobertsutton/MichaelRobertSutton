@@ -7,6 +7,8 @@
   "use strict";
 
   var header = document.getElementById("site-header");
+  var hero = document.getElementById("home");
+  var backToTop = document.getElementById("back-to-top");
   var navToggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("site-nav");
   var navLinks = document.querySelectorAll(".nav-link");
@@ -111,17 +113,28 @@
 
   // ---------- Header Shadow ----------
   if (header) {
+    var updateScrollUI = function () {
+      var currentScroll = window.pageYOffset;
+
+      if (currentScroll > 12) {
+        header.style.boxShadow = "0 6px 18px rgba(15, 23, 42, 0.08)";
+      } else {
+        header.style.boxShadow = "none";
+      }
+
+      if (backToTop && hero) {
+        var showBackToTop = currentScroll > hero.offsetHeight * 0.8;
+        backToTop.classList.toggle("visible", showBackToTop);
+      }
+    };
+
     window.addEventListener(
       "scroll",
-      function () {
-        if (window.pageYOffset > 12) {
-          header.style.boxShadow = "0 6px 18px rgba(15, 23, 42, 0.08)";
-        } else {
-          header.style.boxShadow = "none";
-        }
-      },
+      updateScrollUI,
       { passive: true }
     );
+
+    updateScrollUI();
   }
 
   // ---------- Footer Year ----------
