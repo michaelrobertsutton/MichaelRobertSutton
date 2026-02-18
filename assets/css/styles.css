@@ -183,20 +183,6 @@ img {
   color: var(--color-ink);
 }
 
-.nav-link-resume {
-  color: #fff;
-  background: var(--color-accent);
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-}
-
-.nav-link-resume:hover,
-.nav-link-resume.active,
-.nav-link-resume[aria-current="location"] {
-  color: #fff;
-  background: var(--color-accent-dark);
-}
-
 .nav-toggle {
   display: none;
   position: relative;
