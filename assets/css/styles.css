@@ -482,6 +482,12 @@ h4 {
   border: 1px solid var(--color-line);
   border-radius: 0.65rem;
   background: var(--color-surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proof-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .stat-value {
@@ -514,6 +520,13 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .work-outcome {
@@ -606,6 +619,12 @@ h4 {
   background: var(--color-surface);
   font-size: 0.92rem;
   line-height: 1.4;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.lead-chips li:hover {
+  background: var(--color-accent-glow);
+  border-color: var(--color-accent);
 }
 
 .btn {
@@ -620,6 +639,11 @@ h4 {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -629,6 +653,7 @@ h4 {
 
 .btn-primary:hover {
   background: var(--color-accent-dark);
+  box-shadow: 0 4px 16px var(--color-accent-glow);
 }
 
 .btn-secondary {
@@ -650,6 +675,28 @@ h4 {
   padding-block: var(--space-5);
   color: var(--color-ink-muted);
   font-size: 0.9rem;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--color-accent);
+  z-index: 200;
+  pointer-events: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .back-to-top {
