@@ -205,6 +205,13 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          // Pulse the ghost bg number if this is a work entry
+          if (entry.target.classList.contains('work-entry')) {
+            var bgNum = entry.target.querySelector('.work-bg-num');
+            if (bgNum) {
+              bgNum.classList.add('pulse');
+            }
+          }
           revealObserver.unobserve(entry.target);
         }
       });
@@ -233,4 +240,53 @@
     if (contactSection) stickyObserver.observe(contactSection);
   }
 
+})();
+
+// ---------- Contact Brief Composer ----------
+(function () {
+  var chips = document.querySelectorAll('.contact-chip');
+  var emailBtn = document.getElementById('contact-email-btn');
+  if (!chips.length || !emailBtn) return;
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var subject = chip.getAttribute('data-subject');
+      var body = chip.getAttribute('data-body');
+
+      // Update mailto
+      emailBtn.href = 'mailto:contact@michaelrobertsutton.com?subject=' + subject + '&body=' + body;
+
+      // Toggle active state
+      chips.forEach(function (c) { c.closest('li').classList.remove('is-active'); });
+      chip.closest('li').classList.add('is-active');
+    });
+  });
+})();
+
+// ---------- Redaction Reveal ----------
+(function () {
+  var artifactLinks = document.querySelectorAll('.artifact-list a');
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  artifactLinks.forEach(function (link) {
+    link.classList.add('redacted');
+    link.setAttribute('aria-label', link.textContent.trim() + ' (click to reveal)');
+
+    function reveal() {
+      if (prefersReduced) {
+        link.style.transition = 'none';
+      }
+      link.classList.add('revealed');
+      link.removeAttribute('aria-label');
+    }
+
+    link.addEventListener('click', function (e) {
+      if (!link.classList.contains('revealed')) {
+        e.preventDefault();
+        reveal();
+      }
+    });
+    link.addEventListener('mouseenter', reveal);
+    link.addEventListener('focus', reveal);
+  });
 })();
