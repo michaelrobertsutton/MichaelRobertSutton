@@ -137,6 +137,7 @@ img {
 
 .section {
   padding-block: var(--space-12);
+  border-top: 1px solid var(--color-line);
 }
 
 .section-rule {
@@ -298,6 +299,7 @@ img {
 .hero {
   padding-top: var(--space-12);
   padding-bottom: var(--space-10);
+  border-top: none;
 }
 
 .hero-grid {
@@ -542,25 +544,72 @@ h4 {
   border-color: var(--color-accent);
 }
 
+.work-card:has(details[open]):hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--color-line);
+}
+
 .work-outcome {
   color: var(--color-ink);
 }
 
 .work-detail {
-  border-top: 0;
-  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-3);
   margin-top: auto;
 }
 
 .work-detail summary {
   cursor: pointer;
+  font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-ink-muted);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: color 0.2s ease;
+}
+
+.work-detail summary::-webkit-details-marker { display: none; }
+
+.work-detail summary::before {
+  content: '+';
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.work-detail[open] summary::before {
+  content: '–';
+}
+
+.work-detail summary:hover {
+  color: var(--color-ink);
 }
 
 .work-detail-body {
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-4);
+}
+
+.work-detail-body h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: var(--space-2) 0 0;
+}
+
+.work-detail-body h4:first-child {
+  margin-top: 0;
 }
 
 .artifact-list {
