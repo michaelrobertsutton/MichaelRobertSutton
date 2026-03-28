@@ -286,10 +286,6 @@ img {
   align-items: start;
 }
 
-.hero .eyebrow {
-  margin-bottom: var(--space-3);
-}
-
 h1 {
   margin-top: 0;
   font-size: clamp(2rem, 4vw, 3.35rem);
@@ -352,6 +348,7 @@ h1 {
   width: clamp(13rem, 24vw, 18rem);
   aspect-ratio: 1;
   animation: blob-float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(164, 216, 255, 0.55));
 }
 
 .hero-portrait-img {
@@ -360,8 +357,6 @@ h1 {
   object-fit: cover;
   clip-path: url(#blob-clip);
   display: block;
-  outline: 3px solid var(--color-accent);
-  outline-offset: 4px;
   border-radius: 50%; /* fallback if clip-path unsupported */
 }
 
