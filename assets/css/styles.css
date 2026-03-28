@@ -1231,13 +1231,27 @@ h1 {
     gap: var(--space-6);
   }
 
+  .hero-display-headline {
+    font-size: clamp(1.75rem, 8vw, 2.4rem);
+  }
+
   .hero-display-portrait {
-    width: min(55vw, 14rem);
+    width: min(70vw, 16rem);
     align-self: center;
   }
 
   .hero-display-img {
     min-height: 0;
+  }
+
+  .hero-masthead-meta {
+    white-space: normal;
+    text-align: right;
+    line-height: 1.4;
+  }
+
+  .work-bg-num {
+    display: none;
   }
 }
 
