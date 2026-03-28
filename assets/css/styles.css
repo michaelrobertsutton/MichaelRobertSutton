@@ -1459,7 +1459,8 @@ h1 {
 }
 
 .footer-social-sep {
-  color: var(--color-line);
+  color: var(--color-ink-muted);
+  opacity: 0.4;
 }
 
 /* ---- Artifact Links ---- */
