@@ -133,24 +133,38 @@
 
     <section id="proof" class="section section-rule">
       <div class="container prose-block">
-        <h2 class="reveal">Proof</h2>
-        <p class="intro">Selected, verifiable highlights from my resume.</p>
-        <div class="proof-groups">
-          <article class="proof-group proof-stat reveal">
-            <h3>Architecture wins</h3>
-            <p class="stat-value">20% cycle-time reduction</p>
-            <p class="stat-detail">From a retrieval-augmented generation (RAG) proposal system in Python and LangChain, with support for 4-6 additional competitive bids annually; related work also includes an electronic health record (EHR)-integrated Medicare provider enrollment prototype that reduced enrollment time from hours to minutes.</p>
-          </article>
-          <article class="proof-group proof-stat reveal">
-            <h3>Program growth</h3>
-            <p class="stat-value">$135M+ in federal wins</p>
-            <p class="stat-detail">Delivered across six proposals through technical solution development, technical volume leadership, and solution direction, increasing win rate from 20% to 33%.</p>
-          </article>
-          <article class="proof-group proof-stat reveal">
-            <h3>Federal impact</h3>
-            <p class="stat-value">99.99% service availability</p>
-            <p class="stat-detail">Delivered in the CMS Quality Payment Program, with additional impact through the award-winning Beneficiary Claims Data Application Programming Interface (API), noted as the first federal Health Level Seven (HL7) Bulk Fast Healthcare Interoperability Resources (FHIR) implementation.</p>
-          </article>
+        <h2 class="reveal">By the numbers</h2>
+        <div class="proof-list">
+          <div class="proof-item reveal">
+            <div class="proof-stat-col">
+              <span class="proof-figure">$135M+</span>
+              <span class="proof-meta">in federal wins</span>
+            </div>
+            <div class="proof-desc-col">
+              <h3 class="proof-category">Program growth</h3>
+              <p>Delivered across six proposals through technical solution development, technical volume leadership, and solution direction, increasing win rate from 20% to 33%.</p>
+            </div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="proof-stat-col">
+              <span class="proof-figure">99.99%</span>
+              <span class="proof-meta">service availability</span>
+            </div>
+            <div class="proof-desc-col">
+              <h3 class="proof-category">Federal impact</h3>
+              <p>Delivered in the CMS Quality Payment Program, with additional impact through the award-winning Beneficiary Claims Data API, noted as the first federal HL7 Bulk FHIR implementation.</p>
+            </div>
+          </div>
+          <div class="proof-item reveal">
+            <div class="proof-stat-col">
+              <span class="proof-figure">20%</span>
+              <span class="proof-meta">cycle-time reduction</span>
+            </div>
+            <div class="proof-desc-col">
+              <h3 class="proof-category">Architecture wins</h3>
+              <p>From a retrieval-augmented generation (RAG) proposal system in Python and LangChain, supporting 4–6 additional competitive bids annually.</p>
+            </div>
+          </div>
         </div>
         <p>References and writing samples available on request.</p>
         <p><a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="text-link">Sources: Resume PDF</a></p>
@@ -162,72 +176,81 @@
         <h2 class="reveal">Work</h2>
         <p class="intro">Three representative CMS Modernization and Medicare Claims Data programs, with details available on demand.</p>
 
-        <div class="work-card-grid">
-          <article class="work-card reveal">
-            <h3>Beneficiary Claims Data API (Blue Button 2.0)</h3>
-            <p class="work-outcome"><strong>Award-winning API delivery and first federal Bulk FHIR implementation.</strong></p>
-            <details id="work-blue-button-2" class="work-detail">
-              <summary>Blue Button 2.0 case details</summary>
-              <div class="work-detail-body">
-                <h4>Problem</h4>
-                <p>Medicare claims data needed a modern, scalable interface that could support beneficiary access and external application use. The delivery had to meet federal security and reliability expectations.</p>
-                <h4>My role</h4>
-                <p>Technical Program Manager leading a 25+ full-time equivalent (FTE) team on a $16M effort.</p>
-                <h4>Outcomes</h4>
-                <ul class="compact-list">
-                  <li>Delivered an award-winning Beneficiary Claims Data API program.</li>
-                  <li>Established the first federal Bulk FHIR implementation according to the resume summary.</li>
-                </ul>
-                <h4>Artifacts</h4>
-                <ul class="compact-list artifact-list">
-                  <li><a href="documents/artifacts/sanitized-decision-brief-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized decision brief template (Markdown)</a></li>
-                </ul>
-              </div>
-            </details>
+        <div class="work-list">
+          <article class="work-entry reveal">
+            <span class="work-num" aria-hidden="true">01</span>
+            <div class="work-body">
+              <h3>Beneficiary Claims Data API (Blue Button 2.0)</h3>
+              <p class="work-outcome"><strong>Award-winning API delivery and first federal Bulk FHIR implementation.</strong></p>
+              <details id="work-blue-button-2" class="work-detail">
+                <summary>Blue Button 2.0 case details</summary>
+                <div class="work-detail-body">
+                  <h4>Problem</h4>
+                  <p>Medicare claims data needed a modern, scalable interface that could support beneficiary access and external application use. The delivery had to meet federal security and reliability expectations.</p>
+                  <h4>My role</h4>
+                  <p>Technical Program Manager leading a 25+ full-time equivalent (FTE) team on a $16M effort.</p>
+                  <h4>Outcomes</h4>
+                  <ul class="compact-list">
+                    <li>Delivered an award-winning Beneficiary Claims Data API program.</li>
+                    <li>Established the first federal Bulk FHIR implementation.</li>
+                  </ul>
+                  <h4>Artifacts</h4>
+                  <ul class="compact-list artifact-list">
+                    <li><a href="documents/artifacts/sanitized-decision-brief-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized decision brief template (Markdown)</a></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
           </article>
-          <article class="work-card reveal">
-            <h3>CMS modernization solution architecture</h3>
-            <p class="work-outcome"><strong>$135M+ in wins across six proposals, with win-rate growth from 20% to 33%.</strong></p>
-            <details id="work-cms-solutioning" class="work-detail">
-              <summary>CMS solution architecture case details</summary>
-              <div class="work-detail-body">
-                <h4>Problem</h4>
-                <p>Capture teams needed technically credible solution plans that could both win and survive the transition into delivery. Plans had to account for federal constraints early.</p>
-                <h4>My role</h4>
-                <p>Solutions Architect leading technical volume development and prototype direction.</p>
-                <h4>Outcomes</h4>
-                <ul class="compact-list">
-                  <li>Supported $135M+ in wins across six federal proposals.</li>
-                  <li>Improved team win rate from 20% to 33%.</li>
-                </ul>
-                <h4>Artifacts</h4>
-                <ul class="compact-list artifact-list">
-                  <li><a href="documents/artifacts/sanitized-decision-brief-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized decision brief template (Markdown)</a></li>
-                </ul>
-              </div>
-            </details>
+          <article class="work-entry reveal">
+            <span class="work-num" aria-hidden="true">02</span>
+            <div class="work-body">
+              <h3>CMS modernization solution architecture</h3>
+              <p class="work-outcome"><strong>$135M+ in wins across six proposals, with win-rate growth from 20% to 33%.</strong></p>
+              <details id="work-cms-solutioning" class="work-detail">
+                <summary>CMS solution architecture case details</summary>
+                <div class="work-detail-body">
+                  <h4>Problem</h4>
+                  <p>Capture teams needed technically credible solution plans that could both win and survive the transition into delivery. Plans had to account for federal constraints early.</p>
+                  <h4>My role</h4>
+                  <p>Solutions Architect leading technical volume development and prototype direction.</p>
+                  <h4>Outcomes</h4>
+                  <ul class="compact-list">
+                    <li>Supported $135M+ in wins across six federal proposals.</li>
+                    <li>Improved team win rate from 20% to 33%.</li>
+                  </ul>
+                  <h4>Artifacts</h4>
+                  <ul class="compact-list artifact-list">
+                    <li><a href="documents/artifacts/sanitized-decision-brief-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized decision brief template (Markdown)</a></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
           </article>
-          <article class="work-card reveal">
-            <h3>Quality Payment Program delivery</h3>
-            <p class="work-outcome"><strong>99.99% availability with 91% participation in a CMS production environment.</strong></p>
-            <details id="work-qpp-delivery" class="work-detail">
-              <summary>Quality Payment Program case details</summary>
-              <div class="work-detail-body">
-                <h4>Problem</h4>
-                <p>A major CMS program required dependable cloud operations and API performance at enterprise scale. Delivery had to stay stable under continuous operational pressure.</p>
-                <h4>My role</h4>
-                <p>Technical Program Manager over a $45M program with 50+ FTEs.</p>
-                <h4>Outcomes</h4>
-                <ul class="compact-list">
-                  <li>Achieved 99.99% availability for program services.</li>
-                  <li>Reached 91% participation according to the resume summary.</li>
-                </ul>
-                <h4>Artifacts</h4>
-                <ul class="compact-list artifact-list">
-                  <li><a href="documents/artifacts/sanitized-delivery-risk-register-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized delivery risk register template (Markdown)</a></li>
-                </ul>
-              </div>
-            </details>
+          <article class="work-entry reveal">
+            <span class="work-num" aria-hidden="true">03</span>
+            <div class="work-body">
+              <h3>Quality Payment Program delivery</h3>
+              <p class="work-outcome"><strong>99.99% availability with 91% participation in a CMS production environment.</strong></p>
+              <details id="work-qpp-delivery" class="work-detail">
+                <summary>Quality Payment Program case details</summary>
+                <div class="work-detail-body">
+                  <h4>Problem</h4>
+                  <p>A major CMS program required dependable cloud operations and API performance at enterprise scale. Delivery had to stay stable under continuous operational pressure.</p>
+                  <h4>My role</h4>
+                  <p>Technical Program Manager over a $45M program with 50+ FTEs.</p>
+                  <h4>Outcomes</h4>
+                  <ul class="compact-list">
+                    <li>Achieved 99.99% availability for program services.</li>
+                    <li>Reached 91% participation.</li>
+                  </ul>
+                  <h4>Artifacts</h4>
+                  <ul class="compact-list artifact-list">
+                    <li><a href="documents/artifacts/sanitized-delivery-risk-register-template.md" target="_blank" rel="noopener noreferrer" class="text-link">Sanitized delivery risk register template (Markdown)</a></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
           </article>
         </div>
       </div>
