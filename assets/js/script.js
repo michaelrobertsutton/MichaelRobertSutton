@@ -205,6 +205,13 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          // Pulse the ghost bg number if this is a work entry
+          if (entry.target.classList.contains('work-entry')) {
+            var bgNum = entry.target.querySelector('.work-bg-num');
+            if (bgNum) {
+              setTimeout(function() { bgNum.classList.add('pulse'); }, 400);
+            }
+          }
           revealObserver.unobserve(entry.target);
         }
       });
@@ -234,3 +241,4 @@
   }
 
 })();
+

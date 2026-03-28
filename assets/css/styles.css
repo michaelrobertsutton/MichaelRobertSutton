@@ -1244,10 +1244,6 @@ h1 {
     min-height: 0;
   }
 
-  .hero-masthead {
-    display: none;
-  }
-
   .hero-display-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -1258,6 +1254,10 @@ h1 {
     width: 100%;
     flex-direction: row;
     justify-content: flex-start;
+  }
+
+  .hero-masthead {
+    display: none;
   }
 
   .work-bg-num {
@@ -1423,5 +1423,69 @@ h1 {
   * {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ---- Footer Social Links ---- */
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.footer-copy {
+  color: var(--color-ink-muted);
+  font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.footer-social-link {
+  color: var(--color-ink-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding-block: 0.5rem;
+}
+
+.footer-social-link:hover {
+  color: var(--color-accent);
+}
+
+.footer-social-sep {
+  color: var(--color-ink-muted);
+  opacity: 0.4;
+}
+
+/* ---- Artifact Links ---- */
+.artifact-list a {
+  color: var(--color-accent-dark);
+  text-decoration: none;
+}
+
+.artifact-list a:hover {
+  color: var(--color-accent);
+}
+
+/* ---- Work Entry Pulse Animation ---- */
+@keyframes bgNumPulse {
+  0%   { opacity: 0.05; transform: scale(1); }
+  40%  { opacity: 0.12; transform: scale(1.05); }
+  100% { opacity: 0.05; transform: scale(1); }
+}
+
+.work-bg-num.pulse {
+  animation: bgNumPulse 600ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-bg-num.pulse {
+    animation: none;
   }
 }
