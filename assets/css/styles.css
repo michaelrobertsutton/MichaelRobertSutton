@@ -16,6 +16,8 @@
   --color-accent-glow: rgba(164, 216, 255, 0.15);
   --color-btn-text:    #35393C;
   --header-bg:         rgba(53, 57, 60, 0.92);
+  --color-portrait-glow: rgba(164, 216, 255, 0.55);
+  --color-shadow:      rgba(0, 0, 0, 0.30);
 }
 
 [data-theme="light"] {
@@ -30,6 +32,8 @@
   --color-accent-glow: rgba(43, 143, 204, 0.12);
   --color-btn-text:    #FFFFFF;
   --header-bg:         rgba(245, 247, 250, 0.92);
+  --color-portrait-glow: rgba(43, 143, 204, 0.40);
+  --color-shadow:      rgba(0, 0, 0, 0.12);
 }
 
 :root {
@@ -378,7 +382,7 @@ h1 {
   width: clamp(13rem, 24vw, 18rem);
   aspect-ratio: 1;
   animation: blob-float 6s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(164, 216, 255, 0.55));
+  filter: drop-shadow(0 0 10px var(--color-portrait-glow));
 }
 
 .hero-portrait-img {
@@ -487,7 +491,7 @@ h4 {
 
 .proof-stat:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px var(--color-shadow);
 }
 
 .stat-value {
@@ -525,7 +529,7 @@ h4 {
 
 .work-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--color-accent);
+  box-shadow: 0 8px 24px var(--color-shadow), 0 0 0 1px var(--color-accent);
   border-color: var(--color-accent);
 }
 
