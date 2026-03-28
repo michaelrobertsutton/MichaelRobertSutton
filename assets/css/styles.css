@@ -296,11 +296,12 @@ img {
 
 .hero {
   padding-top: var(--space-12);
+  padding-bottom: var(--space-10);
 }
 
 .hero-grid {
   display: grid;
-  gap: var(--space-8);
+  gap: var(--space-6);
   align-items: start;
 }
 
@@ -366,7 +367,7 @@ h1 {
 
 .hero-portrait-blob {
   position: relative;
-  width: clamp(13rem, 24vw, 18rem);
+  width: clamp(16rem, 55vw, 18rem);
   aspect-ratio: 1;
   animation: blob-float 6s ease-in-out infinite;
   filter: drop-shadow(0 0 10px var(--color-portrait-glow));
@@ -945,6 +946,11 @@ h4 {
   .hero-grid {
     grid-template-columns: minmax(0, 1.6fr) minmax(12rem, 1fr);
     align-items: center;
+    gap: var(--space-8);
+  }
+
+  .hero-portrait-blob {
+    width: clamp(14rem, 24vw, 18rem);
   }
 
   .work-card-grid {
