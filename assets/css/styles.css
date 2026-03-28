@@ -1462,40 +1462,14 @@ h1 {
   color: var(--color-line);
 }
 
-/* ---- Redaction Accent (decorative — text always readable) ---- */
+/* ---- Artifact Links ---- */
 .artifact-list a {
-  position: relative;
   color: var(--color-accent-dark);
   text-decoration: none;
-  display: inline;
-}
-
-.artifact-list a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 2px;
-  background: var(--color-ink);
-  opacity: 0.3;
-  transform: translateY(-50%);
-  pointer-events: none;
-  transition: opacity 0.2s ease;
 }
 
 .artifact-list a:hover {
   color: var(--color-accent);
-}
-
-.artifact-list a:hover::after {
-  opacity: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .artifact-list a::after {
-    transition: none;
-  }
 }
 
 /* ---- Work Entry Pulse Animation ---- */
