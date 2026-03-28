@@ -209,7 +209,7 @@
           if (entry.target.classList.contains('work-entry')) {
             var bgNum = entry.target.querySelector('.work-bg-num');
             if (bgNum) {
-              bgNum.classList.add('pulse');
+              setTimeout(function() { bgNum.classList.add('pulse'); }, 400);
             }
           }
           revealObserver.unobserve(entry.target);
@@ -242,30 +242,3 @@
 
 })();
 
-// ---------- Redaction Reveal ----------
-(function () {
-  var artifactLinks = document.querySelectorAll('.artifact-list a');
-  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  artifactLinks.forEach(function (link) {
-    link.classList.add('redacted');
-    link.setAttribute('aria-label', link.textContent.trim() + ' (click to reveal)');
-
-    function reveal() {
-      if (prefersReduced) {
-        link.style.transition = 'none';
-      }
-      link.classList.add('revealed');
-      link.removeAttribute('aria-label');
-    }
-
-    link.addEventListener('click', function (e) {
-      if (!link.classList.contains('revealed')) {
-        e.preventDefault();
-        reveal();
-      }
-    });
-    link.addEventListener('mouseenter', reveal);
-    link.addEventListener('focus', reveal);
-  });
-})();
