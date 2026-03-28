@@ -1225,10 +1225,27 @@ h1 {
    Responsive: Mobile (<768px)
    ============================================ */
 @media (max-width: 767px) {
+  .hero {
+    /* Fill exactly the viewport minus sticky header */
+    min-height: calc(100svh - 4.15rem);
+    display: flex;
+    flex-direction: column;
+    padding-block: 0;
+  }
+
+  .hero > .container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .hero-display {
+    flex: 1;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-6);
+    gap: var(--space-4);
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-4);
   }
 
   .hero-display-headline {
@@ -1236,18 +1253,25 @@ h1 {
   }
 
   .hero-display-portrait {
-    width: min(70vw, 16rem);
+    width: min(50vw, 12rem);
     align-self: center;
+    /* Allow portrait to shrink so buttons stay visible */
+    flex-shrink: 1;
+    min-height: 0;
+    overflow: hidden;
   }
 
   .hero-display-img {
     min-height: 0;
+    height: 100%;
+    max-height: 28svh;
   }
 
   .hero-display-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-4);
+    gap: var(--space-3);
+    padding-bottom: var(--space-6);
   }
 
   .hero-display-actions {
