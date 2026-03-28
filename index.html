@@ -7,6 +7,7 @@
   <meta name="description" content="Solutions Architect and Technical Program Manager for federal health modernization. Michael Sutton is a GovCon Technical Volume Lead for CMS Modernization and Medicare Claims Data delivery.">
   <meta name="keywords" content="Solutions Architect CMS, Federal Program Manager Maryland, GovCon Technical Volume Lead, CMS Modernization, Medicare Claims Data, Federal Health Modernization">
   <meta name="author" content="Michael Sutton">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#35393C">
 
   <meta property="og:type" content="website">
@@ -75,113 +76,172 @@
       <a href="#home" class="site-logo">Michael Sutton</a>
 
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light mode">
-        <span class="theme-icon" aria-hidden="true">🌙</span>
+        <svg class="theme-icon theme-icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-icon theme-icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
 
-      <button
-        type="button"
-        class="nav-toggle"
-        id="nav-toggle"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="Open menu"
-      >
-        <span class="nav-toggle-bar"></span>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+          <line class="ham-top" x1="3" y1="7" x2="21" y2="7"/>
+          <line class="ham-mid" x1="3" y1="12" x2="21" y2="12"/>
+          <line class="ham-bot" x1="3" y1="17" x2="21" y2="17"/>
+        </svg>
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#resume" class="nav-link">Resume</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-logo">Michael Sutton</span>
+        <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-nav-list">
+          <li><a href="#home" class="mobile-nav-link">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#work" class="mobile-nav-link">Work</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+          <li><a href="#resume" class="mobile-nav-link">Resume</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="mailto:contact@michaelrobertsutton.com" class="mobile-email">contact@michaelrobertsutton.com</a>
+      </div>
+    </div>
+  </div>
+
   <main id="main-content">
+
+    <!-- Hero -->
     <section id="home" class="section hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="hero-greeting">Hi, I'm</p>
-          <h1 class="hero-name">Michael Sutton</h1>
-          <p class="hero-title">Solutions Architect &amp; Technical Program Manager</p>
-          <p class="hero-subhead">I bridge solution architecture and program delivery for federal programs.</p>
-          <p class="intro">I help federal health programs turn policy intent into working software and measurable operational outcomes.</p>
-          <div class="hero-actions">
-            <a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View my resume</a>
-            <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-secondary">Email me</a>
-          </div>
+      <div class="container">
+        <div class="hero-masthead">
+          <span class="hero-masthead-rule" aria-hidden="true"></span>
+          <span class="hero-masthead-meta">Columbia, MD &mdash; Federal Health</span>
         </div>
-        <figure class="hero-portrait">
-          <div class="hero-portrait-blob">
+        <div class="hero-display">
+          <h1 class="hero-display-headline">Federal health programs run on decisions.<em class="hero-display-em"> I make the hard ones executable.</em></h1>
+          <figure class="hero-display-portrait" aria-hidden="false">
             <img
               src="assets/img/IMG_3868.jpeg"
-              alt="Michael Sutton - Federal Health Solutions Architect and Technical Program Manager"
-              class="hero-portrait-img"
-              width="320"
-              height="320"
+              alt="Michael Sutton presenting at a federal technology event"
+              class="hero-display-img"
+              width="480"
+              height="600"
               fetchpriority="high"
               decoding="async"
             >
-          </div>
-          <figcaption>Columbia, Maryland</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="proof" class="section section-rule">
-      <div class="container prose-block">
-        <h2 class="reveal">By the numbers</h2>
-        <div class="proof-list">
-          <div class="proof-item reveal">
-            <div class="proof-stat-col">
-              <span class="proof-figure">$135M+</span>
-              <span class="proof-meta">in federal wins</span>
-            </div>
-            <div class="proof-desc-col">
-              <h3 class="proof-category">Program growth</h3>
-              <p>Delivered across six proposals through technical solution development, technical volume leadership, and solution direction, increasing win rate from 20% to 33%.</p>
-            </div>
-          </div>
-          <div class="proof-item reveal">
-            <div class="proof-stat-col">
-              <span class="proof-figure">99.99%</span>
-              <span class="proof-meta">service availability</span>
-            </div>
-            <div class="proof-desc-col">
-              <h3 class="proof-category">Federal impact</h3>
-              <p>Delivered in the CMS Quality Payment Program, with additional impact through the award-winning Beneficiary Claims Data API, noted as the first federal HL7 Bulk FHIR implementation.</p>
-            </div>
-          </div>
-          <div class="proof-item reveal">
-            <div class="proof-stat-col">
-              <span class="proof-figure">20%</span>
-              <span class="proof-meta">cycle-time reduction</span>
-            </div>
-            <div class="proof-desc-col">
-              <h3 class="proof-category">Architecture wins</h3>
-              <p>From a retrieval-augmented generation (RAG) proposal system in Python and LangChain, supporting 4–6 additional competitive bids annually.</p>
-            </div>
+          </figure>
+        </div>
+        <div class="hero-display-footer">
+          <p class="hero-display-title">Solutions Architect &amp; Technical Program Manager &mdash; 18+ years in federal health</p>
+          <div class="hero-display-actions">
+            <a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Resume</a>
+            <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-secondary">Email</a>
           </div>
         </div>
-        <p>References and writing samples available on request.</p>
-        <p><a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="text-link">Sources: Resume PDF</a></p>
       </div>
     </section>
 
-    <section id="work" class="section">
+    <!-- About -->
+    <section id="about" class="section section--alt">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text prose-block">
+            <h2 class="reveal">About</h2>
+            <blockquote class="about-pullquote">I've stayed in federal health for 18+ years because the quality of software here directly affects how people access care, coverage, and information.</blockquote>
+            <p>I focus on the handoff points where programs often break down: policy to technical design, proposal commitments to delivery plans, and architecture decisions to day-to-day operations.</p>
+            <p>That perspective keeps my work practical and mission-focused &mdash; clear decisions, accountable execution, and systems teams can run long after launch.</p>
+            <aside class="focus-callout reveal" aria-label="Current focus">
+              <h3>Current focus</h3>
+              <p>I'm applying GenAI and policy-as-code patterns to federal compliance workflows, so teams can move from regulatory language to implementation-ready artifacts faster and with clearer traceability. That work includes RAG design and is informed by my AWS Certified AI Practitioner credential.</p>
+            </aside>
+          </div>
+          <div class="about-principles reveal">
+            <h3 class="about-principles-label">How I lead</h3>
+            <ul class="principles-list">
+              <li class="principle-item">
+                <span class="principle-num">01</span>
+                <div><strong class="principle-kw">Clarity</strong><span class="principle-desc">Turn ambiguity into a plan people can execute.</span></div>
+              </li>
+              <li class="principle-item">
+                <span class="principle-num">02</span>
+                <div><strong class="principle-kw">Execution</strong><span class="principle-desc">Make modernization concrete, not just directional.</span></div>
+              </li>
+              <li class="principle-item">
+                <span class="principle-num">03</span>
+                <div><strong class="principle-kw">Alignment</strong><span class="principle-desc">Keep stakeholders aligned without slowing delivery.</span></div>
+              </li>
+              <li class="principle-item">
+                <span class="principle-num">04</span>
+                <div><strong class="principle-kw">Continuity</strong><span class="principle-desc">Bridge proposal promises to delivery reality.</span></div>
+              </li>
+              <li class="principle-item">
+                <span class="principle-num">05</span>
+                <div><strong class="principle-kw">Craft</strong><span class="principle-desc">Ship durable artifacts, not just slides.</span></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section id="proof" class="section section-proof-flip">
+      <div class="container">
+        <p class="proof-flip-label">By the numbers</p>
+        <p class="proof-flip-intro">Most people in this space do one of these. Here are three that show all of it.</p>
+        <div class="proof-flip-strip">
+          <div class="proof-flip-item">
+            <span class="proof-flip-figure">$135M+</span>
+            <span class="proof-flip-caption">in federal wins<br>across six proposals</span>
+          </div>
+          <div class="proof-flip-item">
+            <span class="proof-flip-figure">99.99%</span>
+            <span class="proof-flip-caption">service availability<br>in CMS production</span>
+          </div>
+          <div class="proof-flip-item">
+            <span class="proof-flip-figure">20%</span>
+            <span class="proof-flip-caption">cycle-time reduction<br>via RAG proposal tooling</span>
+          </div>
+        </div>
+        <p class="proof-flip-source"><a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="proof-flip-link">Sources: Resume PDF</a> &mdash; references available on request.</p>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="section section--alt">
       <div class="container prose-block">
         <h2 class="reveal">Work</h2>
-        <p class="intro">Three representative CMS Modernization and Medicare Claims Data programs, with details available on demand.</p>
+        <p class="intro">Three programs in CMS Modernization and Medicare Claims Data delivery.</p>
 
         <div class="work-list">
           <article class="work-entry reveal">
+            <span class="work-bg-num" aria-hidden="true">01</span>
             <span class="work-num" aria-hidden="true">01</span>
             <div class="work-body">
               <h3>Beneficiary Claims Data API (Blue Button 2.0)</h3>
               <p class="work-outcome"><strong>Award-winning API delivery and first federal Bulk FHIR implementation.</strong></p>
+              <div class="work-scale" aria-label="Program scale">
+                <span class="scale-badge">$16M program</span>
+                <span class="scale-badge">25+ FTE</span>
+              </div>
               <details id="work-blue-button-2" class="work-detail">
                 <summary>Blue Button 2.0 case details</summary>
                 <div class="work-detail-body">
@@ -203,10 +263,15 @@
             </div>
           </article>
           <article class="work-entry reveal">
+            <span class="work-bg-num" aria-hidden="true">02</span>
             <span class="work-num" aria-hidden="true">02</span>
             <div class="work-body">
               <h3>CMS modernization solution architecture</h3>
               <p class="work-outcome"><strong>$135M+ in wins across six proposals, with win-rate growth from 20% to 33%.</strong></p>
+              <div class="work-scale" aria-label="Program scale">
+                <span class="scale-badge">$135M+ in wins</span>
+                <span class="scale-badge">6 proposals</span>
+              </div>
               <details id="work-cms-solutioning" class="work-detail">
                 <summary>CMS solution architecture case details</summary>
                 <div class="work-detail-body">
@@ -228,10 +293,15 @@
             </div>
           </article>
           <article class="work-entry reveal">
+            <span class="work-bg-num" aria-hidden="true">03</span>
             <span class="work-num" aria-hidden="true">03</span>
             <div class="work-body">
               <h3>Quality Payment Program delivery</h3>
               <p class="work-outcome"><strong>99.99% availability with 91% participation in a CMS production environment.</strong></p>
+              <div class="work-scale" aria-label="Program scale">
+                <span class="scale-badge">$45M program</span>
+                <span class="scale-badge">50+ FTE</span>
+              </div>
               <details id="work-qpp-delivery" class="work-detail">
                 <summary>Quality Payment Program case details</summary>
                 <div class="work-detail-body">
@@ -256,76 +326,76 @@
       </div>
     </section>
 
+    <!-- Speaking -->
     <section id="speaking" class="section">
       <div class="container prose-block">
         <h2 class="reveal">Speaking &amp; thought leadership</h2>
-        <p class="intro">Topics I can speak on for federal technology audiences, delivery teams, and partner forums.</p>
-        <div class="speaking-topics">
-          <article class="speaking-topic reveal">
-            <h4>Bridging the Policy-to-Code Gap in Federal Health Delivery</h4>
-            <p>How to translate policy intent into technical decisions, delivery increments, and measurable outcomes without losing stakeholder alignment.</p>
-          </article>
-          <article class="speaking-topic reveal">
-            <h4>Implementing Bulk FHIR in Legacy Environments</h4>
-            <p>Practical patterns for introducing modern interoperability while managing integration constraints, security requirements, and operational risk.</p>
-          </article>
-          <article class="speaking-topic reveal">
-            <h4>Writing GovCon Technical Volumes That Transition to Execution</h4>
-            <p>How to structure proposal artifacts so awarded teams can execute them directly instead of rewriting the approach after kickoff.</p>
-          </article>
-          <article class="speaking-topic reveal">
-            <h4>Using GenAI in Federal Compliance and Delivery Workflows</h4>
-            <p>Applied retrieval-augmented generation (RAG) techniques for turning large policy and program inputs into usable delivery artifacts.</p>
-          </article>
+        <p class="intro">For federal technology audiences, delivery teams, and partner forums.</p>
+        <div class="speaking-program reveal">
+          <div class="speaking-program-item">
+            <span class="speaking-program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <div class="speaking-program-body">
+              <h4 class="speaking-program-title">Bridging the Policy-to-Code Gap in Federal Health Delivery</h4>
+              <p class="speaking-program-desc">Translating policy intent into technical decisions, delivery increments, and measurable outcomes without losing stakeholder alignment.</p>
+            </div>
+          </div>
+          <div class="speaking-program-item">
+            <span class="speaking-program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </span>
+            <div class="speaking-program-body">
+              <h4 class="speaking-program-title">Implementing Bulk FHIR in Legacy Environments</h4>
+              <p class="speaking-program-desc">Practical patterns for introducing modern interoperability while managing integration constraints and operational risk.</p>
+            </div>
+          </div>
+          <div class="speaking-program-item">
+            <span class="speaking-program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            <div class="speaking-program-body">
+              <h4 class="speaking-program-title">Writing GovCon Technical Volumes That Transition to Execution</h4>
+              <p class="speaking-program-desc">Structuring proposal artifacts so awarded teams can execute directly instead of rewriting the approach after kickoff.</p>
+            </div>
+          </div>
+          <div class="speaking-program-item">
+            <span class="speaking-program-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </span>
+            <div class="speaking-program-body">
+              <h4 class="speaking-program-title">Using GenAI in Federal Compliance and Delivery Workflows</h4>
+              <p class="speaking-program-desc">Applied RAG for turning large policy and program inputs into usable delivery artifacts.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
+    <!-- Contact -->
+    <section id="contact" class="section section--alt">
       <div class="container prose-block">
-        <h2 class="reveal">About</h2>
-        <p class="intro">I have stayed in federal health for 18+ years because the quality of software here directly affects how people access care, coverage, and information.</p>
-        <p>I focus on the handoff points where programs often break down: policy to technical design, proposal commitments to delivery plans, and architecture decisions to day-to-day operations.</p>
-        <p>That perspective keeps my work practical and mission-focused: clear decisions, accountable execution, and systems teams can run long after launch.</p>
-        <aside class="focus-callout reveal" aria-label="Current focus">
-          <h3>Current focus</h3>
-          <p>I am applying Generative artificial intelligence (GenAI) approaches and policy-as-code patterns to federal compliance workflows, so teams can move from regulatory language to implementation-ready artifacts faster and with clearer traceability.</p>
-          <p>That work includes retrieval-augmented generation (RAG) design and is informed by my AWS Certified AI Practitioner credential.</p>
-        </aside>
-        <div class="lead-bar reveal" aria-label="How I lead">
-          <h3>How I lead</h3>
-          <ul class="lead-chips">
-            <li>I turn ambiguity into a plan people can execute.</li>
-            <li>I make modernization concrete.</li>
-            <li>I keep stakeholders aligned without slowing delivery.</li>
-            <li>I bridge proposal promises to delivery reality.</li>
-            <li>I ship durable artifacts, not just slides.</li>
-          </ul>
+        <h2 class="reveal">Contact</h2>
+        <p class="intro">Share what you're working on and I'll reply directly. Include context and timing so I can respond usefully.</p>
+        <div class="hero-display-actions">
+          <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-primary">Send me an email</a>
         </div>
+        <p><a href="mailto:contact@michaelrobertsutton.com" class="text-link">contact@michaelrobertsutton.com</a></p>
       </div>
     </section>
 
+    <!-- Resume -->
     <section id="resume" class="section section-rule">
       <div class="container prose-block">
         <h2 class="reveal">Resume</h2>
         <p class="intro">Full experience, certifications, and role history.</p>
-        <div class="hero-actions">
+        <div class="hero-display-actions">
           <a href="documents/Sutton_Michael_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View resume PDF</a>
           <a href="documents/Sutton_Michael_Resume.pdf" download class="btn btn-secondary">Download</a>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container prose-block">
-        <h2 class="reveal">Contact</h2>
-        <p class="intro">Share what you're working on and I'll reply directly. Include context and timing so I can respond usefully.</p>
-        <div class="hero-actions">
-          <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-primary">Send me an email</a>
-        </div>
-        <p><a href="mailto:contact@michaelrobertsutton.com" class="text-link">contact@michaelrobertsutton.com</a></p>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
@@ -336,13 +406,12 @@
 
   <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">↑</a>
 
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-    <defs>
-      <clipPath id="blob-clip" clipPathUnits="objectBoundingBox">
-        <path d="M0.44,0.02 C0.65,-0.04 0.92,0.04 1.0,0.26 C1.08,0.48 0.94,0.70 0.82,0.84 C0.70,0.98 0.54,1.04 0.36,1.00 C0.18,0.96 0.02,0.84 0.00,0.65 C-0.02,0.46 0.08,0.24 0.22,0.13 C0.30,0.07 0.36,0.05 0.44,0.02 Z"/>
-      </clipPath>
-    </defs>
-  </svg>
+  <div id="sticky-cta" class="sticky-cta" aria-hidden="true">
+    <div class="sticky-cta-inner">
+      <a href="mailto:contact@michaelrobertsutton.com?subject=Website%20inquiry" class="btn btn-primary sticky-cta-btn">Email me</a>
+    </div>
+  </div>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
