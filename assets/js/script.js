@@ -242,27 +242,6 @@
 
 })();
 
-// ---------- Contact Brief Composer ----------
-(function () {
-  var chips = document.querySelectorAll('.contact-chip');
-  var emailBtn = document.getElementById('contact-email-btn');
-  if (!chips.length || !emailBtn) return;
-
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var subject = chip.getAttribute('data-subject');
-      var body = chip.getAttribute('data-body');
-
-      // Update mailto
-      emailBtn.href = 'mailto:contact@michaelrobertsutton.com?subject=' + subject + '&body=' + body;
-
-      // Toggle active state
-      chips.forEach(function (c) { c.closest('li').classList.remove('is-active'); });
-      chip.closest('li').classList.add('is-active');
-    });
-  });
-})();
-
 // ---------- Redaction Reveal ----------
 (function () {
   var artifactLinks = document.querySelectorAll('.artifact-list a');

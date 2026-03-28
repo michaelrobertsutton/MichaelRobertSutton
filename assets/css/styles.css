@@ -1244,10 +1244,8 @@ h1 {
     min-height: 0;
   }
 
-  .hero-masthead-meta {
-    white-space: normal;
-    text-align: right;
-    line-height: 1.4;
+  .hero-masthead {
+    display: none;
   }
 
   .work-bg-num {
@@ -1449,24 +1447,6 @@ h1 {
 
 .footer-social-sep {
   color: var(--color-line);
-}
-
-/* ---- Contact Brief Composer ---- */
-.contact-chips .contact-chip {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: var(--color-ink);
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-.contact-chips li.is-active {
-  background: var(--color-accent-glow);
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 1px var(--color-accent);
 }
 
 /* ---- Redaction Reveal ---- */
