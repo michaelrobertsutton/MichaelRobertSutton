@@ -356,7 +356,7 @@ img {
 .hero-display-headline {
   font-size: clamp(2.6rem, 7vw, 6rem);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.15;
   letter-spacing: -0.04em;
   color: var(--color-ink);
   margin: 0;
@@ -386,9 +386,8 @@ img {
   object-fit: cover;
   object-position: center 12%;
   display: block;
-  border: 3px solid var(--color-accent);
+  border: 1px solid var(--color-line);
   border-radius: 0.65rem;
-  box-shadow: 0 0 32px var(--color-portrait-glow);
 }
 
 .hero-display-footer {
@@ -405,7 +404,7 @@ img {
 .hero-display-title {
   margin: 0;
   font-size: 0.85rem;
-  color: var(--color-ink-muted);
+  color: var(--color-ink);
   letter-spacing: 0.02em;
   flex: 1;
   min-width: 0;
