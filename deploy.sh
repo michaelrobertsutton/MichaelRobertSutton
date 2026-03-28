@@ -38,12 +38,6 @@ aws s3 cp "s3://$BUCKET/assets/js/" "s3://$BUCKET/assets/js/" \
   --content-type "application/javascript" \
   --metadata-directive REPLACE
 
-aws s3 cp "s3://$BUCKET/assets/img/" "s3://$BUCKET/assets/img/" \
-  --profile "$PROFILE" \
-  --recursive \
-  --cache-control "max-age=31536000" \
-  --metadata-directive REPLACE
-
 echo "Invalidating CloudFront cache..."
 
 INVALIDATION_ID=$(aws cloudfront create-invalidation \
