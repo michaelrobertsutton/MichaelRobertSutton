@@ -170,6 +170,19 @@
     updateScrollUI();
   }
 
+  // ---------- Work Cards — expand/collapse all together ----------
+  var workDetails = document.querySelectorAll('.work-detail');
+  if (workDetails.length > 1) {
+    workDetails.forEach(function (det) {
+      det.addEventListener('toggle', function () {
+        var isOpen = det.open;
+        workDetails.forEach(function (other) {
+          if (other !== det) other.open = isOpen;
+        });
+      });
+    });
+  }
+
   // ---------- Footer Year ----------
   var year = document.getElementById("year");
   if (year) {
