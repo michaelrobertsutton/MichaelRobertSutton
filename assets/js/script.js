@@ -3,6 +3,14 @@
  * Vanilla JavaScript
  */
 
+// ---------- Theme Toggle ----------
+(function() {
+  var savedTheme = localStorage.getItem('theme');
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var theme = savedTheme || (prefersDark ? 'dark' : 'dark'); // default dark
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+
 (function () {
   "use strict";
 
@@ -12,6 +20,30 @@
   var navToggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("site-nav");
   var navLinks = document.querySelectorAll(".nav-link");
+  var themeToggle = document.getElementById('theme-toggle');
+  var themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+
+  // ---------- Theme Toggle ----------
+  if (themeToggle) {
+    var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+    function updateThemeUI(theme) {
+      if (themeIcon) {
+        themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+      }
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    updateThemeUI(currentTheme);
+
+    themeToggle.addEventListener('click', function() {
+      var current = document.documentElement.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeUI(next);
+    });
+  }
 
   // ---------- Mobile Navigation ----------
   if (navToggle && nav) {

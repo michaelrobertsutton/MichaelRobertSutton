@@ -2,16 +2,41 @@
    Michael Sutton - Editorial Portfolio
    ============================================ */
 
-:root {
-  --color-ink: #121826;
-  --color-ink-muted: #4b5565;
-  --color-paper: #f6f4ef;
-  --color-line: #d7d2c4;
-  --color-accent: #0f4c81;
-  --color-accent-dark: #0b3860;
+/* ---- Themes ---- */
+:root,
+[data-theme="dark"] {
+  --color-bg:          #35393C;
+  --color-surface:     #3E4347;
+  --color-surface-2:   #464B50;
+  --color-line:        rgba(255, 255, 255, 0.10);
+  --color-ink:         #F0F2F4;
+  --color-ink-muted:   #9BA3AB;
+  --color-accent:      #A4D8FF;
+  --color-accent-dark: #7CC0F0;
+  --color-accent-glow: rgba(164, 216, 255, 0.15);
+  --color-paper:       #3E4347;
+  --color-btn-text:    #35393C;
+  --header-bg:         rgba(53, 57, 60, 0.92);
+}
 
-  --font-sans: "Public Sans", "Segoe UI", sans-serif;
-  --font-serif: "Newsreader", Georgia, serif;
+[data-theme="light"] {
+  --color-bg:          #F5F7FA;
+  --color-surface:     #FFFFFF;
+  --color-surface-2:   #EDF0F4;
+  --color-line:        rgba(0, 0, 0, 0.10);
+  --color-ink:         #1A1E22;
+  --color-ink-muted:   #5A6270;
+  --color-accent:      #2B8FCC;
+  --color-accent-dark: #1E6FA0;
+  --color-accent-glow: rgba(43, 143, 204, 0.12);
+  --color-paper:       #FFFFFF;
+  --color-btn-text:    #FFFFFF;
+  --header-bg:         rgba(245, 247, 250, 0.92);
+}
+
+:root {
+  --font-sans: "Poppins", "Segoe UI", sans-serif;
+  --font-serif: "Poppins", "Segoe UI", sans-serif;
 
   --container-max: 68rem;
   --container-pad: 1.1rem;
@@ -39,7 +64,7 @@ html {
 body {
   margin: 0;
   color: var(--color-ink);
-  background: #fcfaf7;
+  background: var(--color-bg);
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.75;
@@ -88,7 +113,7 @@ img {
   left: 0;
   z-index: 1000;
   padding: var(--space-3) var(--space-4);
-  color: #fff;
+  color: var(--color-bg);
   background: var(--color-ink);
   transform: translateY(-120%);
   transition: transform 150ms ease;
@@ -141,14 +166,14 @@ img {
   top: 0;
   z-index: 30;
   border-bottom: 1px solid var(--color-line);
-  background: rgba(252, 250, 247, 0.95);
+  background: var(--header-bg);
   backdrop-filter: blur(6px);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
   min-height: 4.15rem;
 }
 
@@ -183,6 +208,25 @@ img {
 .nav-link.active,
 .nav-link[aria-current="location"] {
   color: var(--color-ink);
+}
+
+.theme-toggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.45rem;
+  background: var(--color-surface);
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--color-surface-2);
 }
 
 .nav-toggle {
@@ -283,7 +327,7 @@ h1 {
   width: clamp(13rem, 24vw, 18rem);
   border: 1px solid var(--color-line);
   border-radius: 0.65rem;
-  box-shadow: 10px 10px 0 #e9e4d9;
+  box-shadow: 10px 10px 0 rgba(164, 216, 255, 0.20);
 }
 
 .hero-portrait figcaption {
@@ -326,7 +370,7 @@ h4 {
   padding: var(--space-5);
   border: 1px solid var(--color-line);
   border-radius: 0.65rem;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--color-surface);
 }
 
 .stat-value {
@@ -354,7 +398,7 @@ h4 {
 
 .work-card {
   border: 1px solid var(--color-line);
-  background: transparent;
+  background: var(--color-surface);
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
@@ -391,7 +435,7 @@ h4 {
   padding: var(--space-3);
   border: 1px solid var(--color-line);
   border-radius: 0.45rem;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--color-surface-2);
 }
 
 .artifact-snippet-label {
@@ -414,7 +458,7 @@ h4 {
   border: 1px solid var(--color-line);
   border-radius: 0.65rem;
   padding: var(--space-5);
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--color-surface);
 }
 
 .lead-bar {
@@ -448,7 +492,7 @@ h4 {
   border: 1px solid var(--color-line);
   border-radius: 999px;
   padding: 0.5rem 0.85rem;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--color-surface);
   font-size: 0.92rem;
   line-height: 1.4;
 }
@@ -469,7 +513,7 @@ h4 {
 
 .btn-primary {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-btn-text);
 }
 
 .btn-primary:hover {
@@ -483,7 +527,7 @@ h4 {
 }
 
 .btn-secondary:hover {
-  background: #ece8dd;
+  background: var(--color-surface-2);
 }
 
 .site-footer {
@@ -505,7 +549,7 @@ h4 {
   height: 2.6rem;
   border-radius: 50%;
   border: 1px solid var(--color-line);
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--color-surface-2);
   color: var(--color-accent-dark);
   display: inline-flex;
   align-items: center;
@@ -563,7 +607,7 @@ h4 {
     left: 0;
     right: 0;
     top: 4.15rem;
-    background: var(--color-paper);
+    background: var(--color-surface);
     border-bottom: 1px solid var(--color-line);
     padding: 0 var(--container-pad) var(--space-4);
     display: none;
