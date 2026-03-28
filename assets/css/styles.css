@@ -680,17 +680,43 @@ h4 {
   pointer-events: auto;
 }
 
-@media (min-width: 760px) {
+/* ============================================
+   Responsive: Tablet 768px+
+   ============================================ */
+@media (min-width: 768px) {
   :root {
     --container-pad: 1.5rem;
   }
 
   .section {
-    padding-block: 6rem;
+    padding-block: 5rem;
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+    grid-template-columns: minmax(0, 1.6fr) minmax(12rem, 1fr);
+    align-items: center;
+  }
+
+  .work-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proof-groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .speaking-topics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ============================================
+   Responsive: Desktop 1024px+
+   ============================================ */
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 6rem;
   }
 
   .work-card-grid {
@@ -700,15 +726,12 @@ h4 {
   .work-card {
     min-height: 18.5rem;
   }
-
-  .proof-groups {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: start;
-  }
-
 }
 
-@media (max-width: 980px) {
+/* ============================================
+   Responsive: Mobile nav (hamburger) max-1023px
+   ============================================ */
+@media (max-width: 1023px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -749,6 +772,36 @@ h4 {
   .site-nav.open .nav-list li:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.10s; }
   .site-nav.open .nav-list li:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.15s; }
   .site-nav.open .nav-list li:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.20s; }
+}
+
+/* ============================================
+   Responsive: Desktop nav reset 1024px+
+   ============================================ */
+@media (min-width: 1024px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    background: transparent;
+    border-bottom: none;
+    padding: 0;
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .nav-list li {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
