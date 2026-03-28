@@ -7,7 +7,7 @@
 (function() {
   var savedTheme = localStorage.getItem('theme');
   var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  var theme = savedTheme || (prefersDark ? 'dark' : 'dark'); // default dark
+  var theme = savedTheme || (prefersDark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
 })();
 
@@ -163,11 +163,7 @@
     var updateScrollUI = function () {
       var currentScroll = window.pageYOffset;
 
-      if (currentScroll > 12) {
-        header.style.boxShadow = "0 6px 18px rgba(15, 23, 42, 0.08)";
-      } else {
-        header.style.boxShadow = "none";
-      }
+      header.classList.toggle('scrolled', currentScroll > 12);
 
       if (backToTop && hero) {
         var showBackToTop = currentScroll > hero.offsetHeight * 0.8;
