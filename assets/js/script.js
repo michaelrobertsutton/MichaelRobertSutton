@@ -170,11 +170,12 @@
     updateScrollUI();
   }
 
-  // ---------- Work Cards — expand/collapse all together ----------
+  // ---------- Work Cards — expand/collapse all together (desktop only) ----------
   var workDetails = document.querySelectorAll('.work-detail');
   if (workDetails.length > 1) {
     workDetails.forEach(function (det) {
       det.addEventListener('toggle', function () {
+        if (window.innerWidth < 768) return;
         var isOpen = det.open;
         workDetails.forEach(function (other) {
           if (other !== det) other.open = isOpen;
