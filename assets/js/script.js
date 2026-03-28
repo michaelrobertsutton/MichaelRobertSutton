@@ -18,7 +18,6 @@
   var hero = document.getElementById("home");
   var backToTop = document.getElementById("back-to-top");
   var navToggle = document.getElementById("nav-toggle");
-  var nav = document.getElementById("site-nav");
   var mobileMenu = document.getElementById("mobile-menu");
   var mobileMenuClose = document.getElementById("mobile-menu-close");
   var mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
@@ -147,7 +146,6 @@
     }
   }
 
-
   // ---------- Header Shadow ----------
   if (header) {
     var updateScrollUI = function () {
@@ -170,7 +168,7 @@
     updateScrollUI();
   }
 
-  // ---------- Work Cards — expand/collapse all together (desktop only) ----------
+  // ---------- Work entries — expand/collapse all together (desktop only) ----------
   var workDetails = document.querySelectorAll('.work-detail');
   if (workDetails.length > 1) {
     workDetails.forEach(function (det) {
@@ -213,4 +211,26 @@
     }, { threshold: 0.12 });
     revealEls.forEach(function (el) { revealObserver.observe(el); });
   }
+
+  // ---------- Sticky Mobile CTA ----------
+  var stickyCta = document.getElementById('sticky-cta');
+  var contactSection = document.getElementById('contact');
+  if (stickyCta && hero) {
+    var stickyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.target === hero) {
+          var show = !entry.isIntersecting;
+          stickyCta.classList.toggle('is-visible', show);
+          stickyCta.setAttribute('aria-hidden', show ? 'false' : 'true');
+        }
+        if (entry.target === contactSection && entry.isIntersecting) {
+          stickyCta.classList.remove('is-visible');
+          stickyCta.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }, { threshold: 0.1 });
+    stickyObserver.observe(hero);
+    if (contactSection) stickyObserver.observe(contactSection);
+  }
+
 })();

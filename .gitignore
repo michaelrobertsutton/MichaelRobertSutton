@@ -5,4 +5,3 @@ Thumbs.db
 *.log
 .gstack/
 .worktrees/
-.env.deploy
