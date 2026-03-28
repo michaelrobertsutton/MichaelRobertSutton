@@ -19,77 +19,67 @@
   var backToTop = document.getElementById("back-to-top");
   var navToggle = document.getElementById("nav-toggle");
   var nav = document.getElementById("site-nav");
+  var mobileMenu = document.getElementById("mobile-menu");
+  var mobileMenuClose = document.getElementById("mobile-menu-close");
+  var mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
   var navLinks = document.querySelectorAll(".nav-link");
   var themeToggle = document.getElementById('theme-toggle');
-  var themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
 
   // ---------- Theme Toggle ----------
   if (themeToggle) {
-    var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-
-    function updateThemeUI(theme) {
-      if (themeIcon) {
-        themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
-      }
+    function updateThemeLabel(theme) {
       themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
 
-    updateThemeUI(currentTheme);
+    updateThemeLabel(document.documentElement.getAttribute('data-theme') || 'dark');
 
     themeToggle.addEventListener('click', function() {
       var current = document.documentElement.getAttribute('data-theme') || 'dark';
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-      updateThemeUI(next);
+      updateThemeLabel(next);
     });
   }
 
-  // ---------- Mobile Navigation ----------
-  if (navToggle && nav) {
-    navToggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-    });
-
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open menu");
-      });
-    });
-
-    document.addEventListener("click", function (event) {
-      if (!nav.classList.contains("open")) {
-        return;
-      }
-
-      var target = event.target;
-      if (!(target instanceof Element)) {
-        return;
-      }
-
-      var clickedInNav = nav.contains(target);
-      var clickedOnToggle = navToggle.contains(target);
-
-      if (!clickedInNav && !clickedOnToggle) {
-        nav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open menu");
-      }
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && nav.classList.contains("open")) {
-        nav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open menu");
-        navToggle.focus();
-      }
-    });
+  // ---------- Mobile Navigation (full-screen overlay) ----------
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.add("is-open");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    if (mobileMenuClose) mobileMenuClose.focus();
   }
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove("is-open");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    if (navToggle) {
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.focus();
+    }
+    document.body.style.overflow = "";
+  }
+
+  if (navToggle) {
+    navToggle.addEventListener("click", openMobileMenu);
+  }
+
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener("click", closeMobileMenu);
+  }
+
+  mobileNavLinks.forEach(function (link) {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && mobileMenu && mobileMenu.classList.contains("is-open")) {
+      closeMobileMenu();
+    }
+  });
 
   // ---------- Active Section State ----------
   if (navLinks.length) {
