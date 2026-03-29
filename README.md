@@ -1,42 +1,72 @@
 # michaelrobertsutton.com
 
-Single-page editorial portfolio for Michael Sutton, implemented with vanilla HTML, CSS, and JavaScript.
+Single-page editorial portfolio for Michael Sutton — built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step.
 
-## Quickstart
+## Getting Started
 
-1. Start a local static server from repo root:
+These instructions will get the site running locally for development.
+
+### Prerequisites
+
+- Python 3 (for local dev server)
+- AWS CLI with a `personal` profile configured (for deployment only)
+- `CLOUDFRONT_DISTRIBUTION_ID` set in your shell environment (for deployment only)
+
+### Local Development
+
+Start a static server from the repo root:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-2. Open `http://localhost:8000`.
+Open `http://localhost:8000`.
 
-No build step is required.
+## File Map
 
-## File map
+```
+index.html                           Page structure, content, metadata, JSON-LD schema
+assets/css/styles.css                Design system, layout, typography, responsive behavior
+assets/js/script.js                  Navigation state, active-section highlighting, back-to-top
+documents/Sutton_Michael_Resume.pdf  Source resume used for proof blocks
+documents/artifacts/*.md             Sanitized public artifacts linked from Work section
+sitemap.xml                          Static sitemap
+robots.txt                           Crawler policy
+```
 
-- `index.html`: page structure, content, metadata, JSON-LD Person schema.
-- `assets/css/styles.css`: editorial design system, layout, typography, and responsive behavior.
-- `assets/js/script.js`: navigation state, active-section highlighting, and back-to-top behavior.
-- `documents/Sutton_Michael_Resume.pdf`: source resume used for proof blocks.
-- `documents/artifacts/*.md`: sanitized public artifacts linked from Work.
-- `sitemap.xml`: static sitemap.
-- `robots.txt`: crawler policy and sitemap reference.
-
-## Edit workflow
+## Edit Workflow
 
 1. Update copy and section structure in `index.html`.
 2. Update visual system and spacing in `assets/css/styles.css`.
 3. Update interaction behavior in `assets/js/script.js`.
-4. Reload browser and verify keyboard navigation, focus states, and anchor links.
+4. Reload browser — verify keyboard navigation, focus states, and anchor links.
 
-## Deployment notes
+## Deployment
 
-This is a static site and can be deployed to any static host (GitHub Pages, Netlify, Vercel static output, S3 + CloudFront, etc.).
+The site deploys to S3 + CloudFront via `deploy.sh`.
 
-Minimum requirements:
+### Prerequisites
 
-- Serve `index.html` at `/`.
-- Serve `/documents/Sutton_Michael_Resume.pdf`.
-- Serve `/sitemap.xml` and `/robots.txt`.
+Add your CloudFront distribution ID to your shell environment (one-time setup):
+
+```bash
+echo 'export CLOUDFRONT_DISTRIBUTION_ID="your-distribution-id"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Deploy
+
+```bash
+./deploy.sh
+```
+
+Syncs all site files to S3 and invalidates the CloudFront cache. Requires the AWS CLI `personal` profile to be configured with appropriate permissions.
+
+## Built With
+
+- Vanilla HTML, CSS, JavaScript — no framework or build tooling
+- AWS S3 + CloudFront — static hosting and CDN
+
+## Author
+
+**Michael Sutton** — [michaelrobertsutton.com](https://michaelrobertsutton.com)
