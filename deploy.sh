@@ -2,7 +2,7 @@
 set -e
 
 BUCKET="michaelrobertsutton.com"
-DISTRIBUTION_ID="EA1U4ZQKJ4RE3"
+DISTRIBUTION_ID="${CLOUDFRONT_DISTRIBUTION_ID:?CLOUDFRONT_DISTRIBUTION_ID is not set — add it to ~/.zshrc}"
 PROFILE="personal"
 
 echo "Deploying to s3://$BUCKET..."

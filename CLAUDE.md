@@ -10,7 +10,7 @@ When the user says "deploy", "push to production", "ship it", or similar — run
 ./deploy.sh
 ```
 
-This syncs all site files to S3 (`michaelrobertsutton.com`) and invalidates the CloudFront cache (`EA1U4ZQKJ4RE3`). Uses the `personal` AWS CLI profile.
+This syncs all site files to S3 (`michaelrobertsutton.com`) and invalidates the CloudFront cache. Uses the `personal` AWS CLI profile. Requires `CLOUDFRONT_DISTRIBUTION_ID` set in your shell environment (`~/.zshrc`).
 
 ## Design System
 Always read DESIGN.md before making any visual or UI decisions.
