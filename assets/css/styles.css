@@ -6,21 +6,21 @@
 :root,
 [data-theme="dark"] {
   color-scheme: dark;
-  --color-bg:          #35393C;
-  --color-surface:     #3E4347;
-  --color-surface-2:   #464B50;
-  --color-line:        rgba(255, 255, 255, 0.10);
-  --color-ink:         #F0F2F4;
-  --color-ink-muted:   #9BA3AB;
-  --color-accent:      #A4D8FF;
-  --color-accent-dark: #7CC0F0;
-  --color-accent-glow: rgba(164, 216, 255, 0.15);
-  --color-btn-text:    #35393C;
-  --header-bg:         rgba(53, 57, 60, 0.92);
-  --color-portrait-glow: rgba(164, 216, 255, 0.18);
-  --color-shadow:      rgba(0, 0, 0, 0.30);
-  --color-warm:        #C9A460;
-  --color-warm-glow:   rgba(201, 164, 96, 0.12);
+  --color-bg:            #09294A;
+  --color-surface:       #0D3B66;
+  --color-surface-2:     #1A4A7A;
+  --color-line:          rgba(244, 211, 94, 0.12);
+  --color-ink:           #F0F4FF;
+  --color-ink-muted:     #8098B8;
+  --color-accent:        #F4D35E;
+  --color-accent-dark:   #D4B33E;
+  --color-accent-glow:   rgba(244, 211, 94, 0.15);
+  --color-btn-text:      #09294A;
+  --header-bg:           rgba(9, 41, 74, 0.92);
+  --color-portrait-glow: rgba(244, 211, 94, 0.18);
+  --color-shadow:        rgba(0, 0, 0, 0.45);
+  --color-warm:          #EE964B;
+  --color-warm-glow:     rgba(238, 150, 75, 0.12);
 }
 
 [data-theme="light"] {
@@ -1250,6 +1250,7 @@ h1 {
 
   .hero-display-headline {
     font-size: clamp(1.75rem, 8vw, 2.4rem);
+    flex: none;
   }
 
   .hero-display-portrait {
