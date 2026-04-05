@@ -1250,6 +1250,7 @@ h1 {
 
   .hero-display-headline {
     font-size: clamp(1.75rem, 8vw, 2.4rem);
+    flex: none;
   }
 
   .hero-display-portrait {
