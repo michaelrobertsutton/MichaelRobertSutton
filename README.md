@@ -2,7 +2,7 @@
 
 Solutions Architect and AI practitioner with 18+ years building federal healthcare technology at scale.
 
-Led architecture for [Blue Button 2.0](https://bluebutton.cms.gov) — the first federal Bulk FHIR API, now serving 53M+ Medicare beneficiaries. Currently at [@Bellese](https://github.com/Bellese), leading technical solution development for CMS programs and building AI systems that run in compliance-sensitive federal environments. Technical architecture lead on $174M+ in awarded contracts.
+Program lead for [Blue Button 2.0](https://bluebutton.cms.gov) — the first federal Bulk FHIR API, now serving 53M+ Medicare beneficiaries. Currently at [@Bellese](https://github.com/Bellese), leading technical solution development for CMS programs and building AI systems that run in compliance-sensitive federal environments. Technical architecture lead on $174M+ in awarded contracts.
 
 ## What I build
 
